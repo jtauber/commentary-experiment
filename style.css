@@ -1,0 +1,86 @@
+:root {
+  --secondary-background: #2C3E50;
+}
+body {
+  font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;  
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+header {
+  background: var(--secondary-background);
+  color: #FFF;
+  padding: 1rem 2rem;
+}
+header h1 {
+  margin: 0;
+  font-weight: 400;
+}
+main {
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  background: #EEE;
+  padding: 20px;
+  display: flex;
+  gap: 1rem;
+}
+footer {
+  font-weight: 300;
+  background: var(--secondary-background);
+  color: #FFF;
+  padding: 1rem 2rem;
+}
+section {
+  background: #F7F7F7;
+  line-height: 1.5;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+section#source {
+  flex: 2;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+section p {
+  max-width: 60ch;
+}
+section#commentary {
+  flex: 1;
+  font-size: 1.2rem;
+}
+.comment {
+  display: none;
+  padding: 1rem;
+  max-width: 60ch;
+}
+.comment .lemma {
+  font-weight: bold;
+  cursor: pointer;
+}
+.ref {
+  font-weight: bold;
+  padding: 4px;
+  margin: -4px;
+  cursor: pointer;
+}
+.ref.active {
+  background: #FFD70040;
+}
+.ref:hover {
+  background: #FFD70080;
+}
+.comment:hover {
+  background: #FFD70020;
+}
+.comment.show {
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
