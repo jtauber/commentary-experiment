@@ -2,6 +2,13 @@ console.log("PAGE RELOADED")
 document.addEventListener('DOMContentLoaded', () => {
   const refs = document.querySelectorAll('.ref');
   const lemmas = document.querySelectorAll('.lemma');
+  const tooltips = document.querySelectorAll('.irr-anchor');
+
+  tooltips.forEach(tooltip => {
+    tooltip.addEventListener('mouseover', function(){
+      console.log(this.getAttribute('id'));
+    });
+  });
 
   refs.forEach(ref => {
     
@@ -17,17 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (ref.innerHTML.indexOf(text) == -1 && text.indexOf(ref.innerHTML) == -1) {
           targetComment.classList.remove('show');
           ref.classList.remove('active');
-        } else {
-          //console.log(targetComment.children[0].innerHTML+" ***  "+text);
-          ref.classList.add('active');
-          //targetComment.classList.add('show');
         } 
       })
 
       if (targetComment) {
         if (targetComment.classList.contains('show')) {
           targetComment.classList.remove('show');
-          //this.classList.remove('active');
+          this.classList.remove('active');
         } else {
           ref.classList.add('active');
           targetComment.classList.add('show');
@@ -35,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       
       }
-      console.log(refId)
     });
   });
 });

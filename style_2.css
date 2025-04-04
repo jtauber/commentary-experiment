@@ -61,6 +61,8 @@ section#commentary {
 
 .comment .irr-anchor {
   color:rgb(30, 80, 174);
+  /*position: relative;*/
+  /*display: inline-block;*/
 }
 
 .ref {
@@ -75,22 +77,40 @@ section#commentary {
 .ref:hover {
   background: #FFD70080;
 }
-.comment:hover {
-  background: #FFD70020;
-}
+
 .comment.show {
   display: block;
   animation: fadeIn 0.2s ease-in-out;
 }
 
-.irr {
-  background: #00D7FF40;
+.comment .irr-anchor .irr {
+  visibility: hidden;
+  background-color: rgb(27, 27, 120);
+  color: #fff;
   text-align: center;
+  padding: 5px;
+  /*border-radius: 6px;*/
+
+  /* Position the tooltip text 
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;*/
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
 }
+
+.comment .irr-anchor:hover .irr {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 .irr-nested {
   background-color: #00D7FFA0;
-  text-align: center;
+  align-content: center;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
